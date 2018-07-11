@@ -25,6 +25,7 @@ def save_hard_example(net, data,save_path):
     # print(images[0])
     gt_boxes_list = data['bboxes']
     num_of_images = len(im_idx_list)
+    print "--------------------------",num_of_images
 
     print("processing %d images in total" % num_of_images)
 
@@ -164,7 +165,7 @@ def t_net(prefix, epoch,
     test_data = TestLoader(data['images'])
     #list
     detections,_ = mtcnn_detector.detect_face(test_data)
-
+    print len(detections)
     save_net = 'RNet'
     if test_mode == "PNet":
         save_net = "RNet"
